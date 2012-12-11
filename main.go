@@ -12,8 +12,8 @@ import (
 )
 
 const (
-	// http://www.meetup.com/golang-syd/events/75463782/
-	eventid = 75463782
+	// http://www.ozberrypi.org/events/87995132/
+	eventid = 87995132
 
 	// how many exchanges
 	shuffles = 9001
@@ -22,6 +22,7 @@ const (
 // filter names from the json blob meetup gives us
 func filter(m map[string]interface{}) (result []string) {
 	for _, v := range m["results"].([]interface{}) {
+		//log.Println(v.(map[string]interface{})["member"].(map[string]interface{})["name"].(string))
 		result = append(result, v.(map[string]interface{})["member"].(map[string]interface{})["name"].(string))
 	}
 	return
@@ -36,6 +37,7 @@ func shuffle(punters []string) {
 }
 
 // because things are funnier when they are piped through figlet
+// apt-get install figlet
 func figlet(name string) error {
 	cmd := exec.Command("/usr/bin/figlet", name)
 	cmd.Stdout = os.Stdout
@@ -70,7 +72,7 @@ func main() {
 	shuffle(punters)
 
 	log.Println("Pausing for dramatic effect")
-	time.Sleep(3 * time.Second)
+	time.Sleep(2 * time.Second)
 
 	fmt.Println("And the winner is ...")
 	time.Sleep(1500 * time.Millisecond)
