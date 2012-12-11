@@ -10,4 +10,4 @@ export MEETUP_API_KEY=[yourKey]
 go run main.go
 ```
 
-And a thank you to Dave Cheney
+And a thank you to Dave Cheney :)
