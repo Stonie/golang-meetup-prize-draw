@@ -12,11 +12,11 @@ import (
 )
 
 const (
-	// http://www.ozberrypi.org/events/87995132/
-	eventid = 87995132
+	// http://www.meetup.com/OzBerryPi/events/[eventid]/
+	eventid = 113434222
 
 	// how many exchanges
-	shuffles = 9001
+	shuffles = 4200
 )
 
 // filter names from the json blob meetup gives us
@@ -60,7 +60,7 @@ func main() {
 		log.Fatalf("Aww snap, that doesn't look like json: %v", err)
 	}
 	log.Println("Collating results")
-	time.Sleep(1500 * time.Millisecond)
+	time.Sleep(1000 * time.Millisecond)
 	punters := filter(result)
 
 	log.Println("Seeding random numbers")
