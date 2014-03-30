@@ -13,7 +13,7 @@ import (
 
 const (
 	// http://www.meetup.com/OzBerryPi/events/[eventid]/
-	eventid = 113434222
+	eventid = 171366402
 
 	// how many exchanges
 	shuffles = 4200
@@ -63,18 +63,18 @@ func main() {
 	time.Sleep(1000 * time.Millisecond)
 	punters := filter(result)
 
-	log.Println("Seeding random numbers")
-	time.Sleep(1 * time.Second)
+	//log.Println("Seeding random numbers")
+	//time.Sleep(1 * time.Second)
 	rand.Seed(time.Now().Unix())
 
 	log.Println("Shuffling")
-	time.Sleep(2 * time.Second)
+	time.Sleep(500  * time.Millisecond)
 	shuffle(punters)
 
-	log.Println("Pausing for dramatic effect")
-	time.Sleep(2 * time.Second)
+	// log.Println("Pausing for dramatic effect")
+	//  time.Sleep(2 * time.Second)
 
 	fmt.Println("And the winner is ...")
-	time.Sleep(1500 * time.Millisecond)
+	time.Sleep(500 * time.Millisecond)
 	figlet(punters[0])
 }
