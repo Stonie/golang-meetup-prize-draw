@@ -13,7 +13,7 @@ import (
 
 const (
 	// http://www.meetup.com/OzBerryPi/events/[eventid]/
-	eventid = 171366402
+	eventid = os.Getenv("MEETUP_EVENT_ID")
 
 	// how many exchanges
 	shuffles = 4200
