@@ -6,7 +6,7 @@ apt-get install golang-go
 apt-get install figlet
 
 export MEETUP_API_KEY=[yourKey]
-export MEETUP_EVENT_ID=[http://www.meetup.com/OzBerryPi/events/[eventid]/]
+export MEETUP_EVENT_ID=[eventid] # http://www.meetup.com/OzBerryPi/events/[eventid]/
 
 go run main.go
 ```
